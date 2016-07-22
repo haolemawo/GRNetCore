@@ -22,7 +22,7 @@ namespace GR
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=NetCoreDb;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=Passw0rd");
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=NetCoreDb;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=Passw0rd");
             base.OnConfiguring(optionsBuilder);
         }
 
