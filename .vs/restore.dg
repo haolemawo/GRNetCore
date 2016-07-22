@@ -1,0 +1,11 @@
+#:E:\Code\GRNetCore\GR.Services\GR.Services.xproj
+E:\Code\GRNetCore\GR.Services\GR.Services.xproj|E:\Code\GRNetCore\GR.Core\GR.Core.xproj
+E:\Code\GRNetCore\GR.Services\GR.Services.xproj|E:\Code\GRNetCore\GR.Data\GR.Data.xproj
+E:\Code\GRNetCore\GR.Data\GR.Data.xproj|E:\Code\GRNetCore\GR.Core\GR.Core.xproj
+#:E:\Code\GRNetCore\GR.Web\GR.Web.xproj
+E:\Code\GRNetCore\GR.Web\GR.Web.xproj|E:\Code\GRNetCore\GR.Core\GR.Core.xproj
+E:\Code\GRNetCore\GR.Web\GR.Web.xproj|E:\Code\GRNetCore\GR.Data\GR.Data.xproj
+E:\Code\GRNetCore\GR.Web\GR.Web.xproj|E:\Code\GRNetCore\GR.Services\GR.Services.xproj
+E:\Code\GRNetCore\GR.Data\GR.Data.xproj|E:\Code\GRNetCore\GR.Core\GR.Core.xproj
+E:\Code\GRNetCore\GR.Services\GR.Services.xproj|E:\Code\GRNetCore\GR.Core\GR.Core.xproj
+E:\Code\GRNetCore\GR.Services\GR.Services.xproj|E:\Code\GRNetCore\GR.Data\GR.Data.xproj
