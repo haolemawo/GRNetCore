@@ -12,10 +12,12 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETStandard,Version=v1.6
+--reference:C:\Users\qiyin.gan\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\Microsoft.Win32.Primitives\4.0.1\ref\netstandard1.3\Microsoft.Win32.Primitives.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.AppContext\4.1.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Collections\4.0.11\ref\netstandard1.3\System.Collections.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Collections.Concurrent\4.0.12\ref\netstandard1.3\System.Collections.Concurrent.dll
+--reference:C:\Users\qiyin.gan\.nuget\packages\System.ComponentModel\4.0.1\ref\netstandard1.0\System.ComponentModel.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Console\4.0.0\ref\netstandard1.3\System.Console.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Diagnostics.Debug\4.0.11\ref\netstandard1.3\System.Diagnostics.Debug.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Diagnostics.Tools\4.0.1\ref\netstandard1.0\System.Diagnostics.Tools.dll
@@ -55,6 +57,7 @@
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
+E:\Code\GRNetCore\GR.Core\DependencyRegister.cs
 E:\Code\GRNetCore\GR.Core\Domain\BaseEntity.cs
 E:\Code\GRNetCore\GR.Core\Domain\Menus\Menu.cs
 E:\Code\GRNetCore\GR.Core\Domain\Menus\MenuRole.cs
@@ -62,3 +65,5 @@ E:\Code\GRNetCore\GR.Core\Domain\Roles\Role.cs
 E:\Code\GRNetCore\GR.Core\Domain\Users\User.cs
 E:\Code\GRNetCore\GR.Core\Domain\Users\UserRole.cs
 E:\Code\GRNetCore\GR.Core\Properties\AssemblyInfo.cs
+E:\Code\GRNetCore\GR.Core\Security\AESEncryptProvider.cs
+E:\Code\GRNetCore\GR.Core\Security\MD5EncryptProvider.cs

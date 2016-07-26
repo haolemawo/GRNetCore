@@ -2,7 +2,7 @@
 using GR.Core.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace GR.Mapping.Users
+namespace GR.Data.Mapping.Users
 {
     public class UserMap
     {

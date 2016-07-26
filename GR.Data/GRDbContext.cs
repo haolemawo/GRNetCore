@@ -2,12 +2,12 @@
 using GR.Core.Domain.Menus;
 using GR.Core.Domain.Roles;
 using GR.Core.Domain.Users;
-using GR.Mapping.Menus;
-using GR.Mapping.Roles;
-using GR.Mapping.Users;
+using GR.Data.Mapping.Menus;
+using GR.Data.Mapping.Roles;
+using GR.Data.Mapping.Users;
 using Microsoft.EntityFrameworkCore;
 
-namespace GR
+namespace GR.Data
 {
     /// <summary>
     /// 数据库链接上下文

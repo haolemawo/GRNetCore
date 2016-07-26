@@ -33,9 +33,12 @@ namespace GR.Web
         {
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
-            //services.AddDbContext<GR.Data.GRDbContext>(x => x.UseSqlServer(Configuration.GetSection("ConnectionStrings")["DefaultConnection"]));
-            //services.AddDbContext<GRDbContext>(x => x.UseSqlServer("Data Source=.;Initial Catalog=NetCoreDb2;Integrated Security=False;Persist Security Info=False;User ID=sa;Password=Passw0rd"));
-           
+            //services.AddDbContext<GRDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //
+            Data.DependencyRegister.ConfigureServices(services);
+            Core.DependencyRegister.ConfigureServices(services);
+            Services.DependencyRegister.ConfigureServices(services);
+            //
             services.AddMvc();
         }
 

@@ -81,6 +81,7 @@
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --reference:E:\Code\GRNetCore\GR.Core\bin\Debug\netstandard1.6\GR.Core.dll
 --reference:E:\Code\GRNetCore\GR.Data\bin\Debug\netstandard1.6\GR.Data.dll
+E:\Code\GRNetCore\GR.Services\DependencyRegister.cs
 E:\Code\GRNetCore\GR.Services\Account\AccountService.cs
 E:\Code\GRNetCore\GR.Services\Account\Models\LoginViewModel.cs
 E:\Code\GRNetCore\GR.Services\Account\Models\UserModel.cs

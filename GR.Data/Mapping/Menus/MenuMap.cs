@@ -2,7 +2,7 @@
 using GR.Core.Domain.Menus;
 using Microsoft.EntityFrameworkCore;
 
-namespace GR.Mapping.Menus
+namespace GR.Data.Mapping.Menus
 {
     public class MenuMap
     {

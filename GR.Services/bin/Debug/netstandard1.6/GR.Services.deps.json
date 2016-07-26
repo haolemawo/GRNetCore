@@ -11,7 +11,8 @@
         "dependencies": {
           "GR.Core": "1.0.0",
           "GR.Data": "1.0.0",
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
         },
         "runtime": {
           "GR.Services.dll": {}
@@ -1228,7 +1229,8 @@
       },
       "GR.Core/1.0.0": {
         "dependencies": {
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
         },
         "runtime": {
           "GR.Core.dll": {}
@@ -1239,7 +1241,8 @@
           "GR.Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "1.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "1.0.0",
-          "NETStandard.Library": "1.6.0"
+          "NETStandard.Library": "1.6.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "1.0.0"
         },
         "runtime": {
           "GR.Data.dll": {}

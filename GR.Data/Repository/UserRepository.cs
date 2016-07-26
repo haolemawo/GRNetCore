@@ -2,7 +2,7 @@
 using System.Linq;
 using GR.Core.Domain.Users;
 
-namespace GR.Repository
+namespace GR.Data.Repository
 {
     public class UserRepository
     {

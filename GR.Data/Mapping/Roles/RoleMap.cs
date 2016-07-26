@@ -2,7 +2,7 @@
 using GR.Core.Domain.Roles;
 using Microsoft.EntityFrameworkCore;
 
-namespace GR.Mapping.Roles
+namespace GR.Data.Mapping.Roles
 {
     public class RoleMap
     {

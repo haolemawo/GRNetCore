@@ -1,5 +1,5 @@
 ﻿using System; 
-using GR.Repository;
+using GR.Data.Repository;
 using GR.Services.Account.Models;
 
 namespace GR.Services.Account
