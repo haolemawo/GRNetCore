@@ -36,7 +36,7 @@
 </head>
 <body>
     <div class="container-fluid">
-        <form asp-action="Login" asp-controller="Account" class="form-signin"  >
+        <form asp-action="Login" asp-controller="Account" method="post" class="form-signin"  >
             @Html.AntiForgeryToken()
             <h2 class="form-signin-heading">请登录</h2>
             <label for="username" class="sr-only">用户名</label>
