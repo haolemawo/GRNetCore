@@ -1,10 +1,14 @@
 ﻿using System;
+using System.Text;
+using GR.Services.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GR.Web
 {
@@ -42,6 +46,11 @@ namespace GR.Web
             services.AddMvc();
         }
 
+        // The secret key every token will be signed with.
+        // In production, you should store this securely in environment variables
+        // or a key management tool. Don't hardcode this into your application!
+        //private static readonly string _secretKey = "mysupersecret_secretkey!123";
+
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
@@ -70,6 +79,16 @@ namespace GR.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            //add JWT generation endpoint
+            /*var sigingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_secretKey));
+            var options = new JwtTokenProviderOptions
+            {
+                Audience = "ExampleAudience",
+                Issuer = "ExampleIssuer",
+                SigningCredentials = new SigningCredentials(sigingKey, SecurityAlgorithms.HmacSha256)
+            };
+            app.UseMiddleware<JwtTokenProviderMiddleware>(Options.Create(options));
+            */
         }
     }
 }

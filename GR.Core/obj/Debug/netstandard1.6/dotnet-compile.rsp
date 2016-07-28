@@ -64,6 +64,7 @@ E:\Code\GRNetCore\GR.Core\Domain\Menus\MenuRole.cs
 E:\Code\GRNetCore\GR.Core\Domain\Roles\Role.cs
 E:\Code\GRNetCore\GR.Core\Domain\Users\User.cs
 E:\Code\GRNetCore\GR.Core\Domain\Users\UserRole.cs
+E:\Code\GRNetCore\GR.Core\Extensions\DateTimeExtension.cs
 E:\Code\GRNetCore\GR.Core\Properties\AssemblyInfo.cs
 E:\Code\GRNetCore\GR.Core\Security\AESEncryptProvider.cs
 E:\Code\GRNetCore\GR.Core\Security\MD5EncryptProvider.cs
