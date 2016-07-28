@@ -23,8 +23,10 @@ namespace GR.Services.Authentication
         public void SignIn(UserModel user, bool createPersistentCookie)
         {
             //throw new NotImplementedException();
-           // var 
-          //var ticket=new AuthenticationTicket()
+            // var 
+            //var ticket = new AuthenticationTicket(
+               
+            //    );
         }
 
         /// <summary>

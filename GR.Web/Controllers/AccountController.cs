@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GR.Web.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private readonly AccountService _accountService;
 
@@ -33,7 +33,7 @@ namespace GR.Web.Controllers
                 model.Password = MD5EncryptProvider.Encrypt(model.Password);
                 var user = _accountService.Login(model);
                 if (user != null)
-                {
+                { 
                     return RedirectToAction("Index", "Home");
                 }
                 return View(model);

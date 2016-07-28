@@ -43,6 +43,8 @@ namespace GR.Web
             Core.DependencyRegister.ConfigureServices(services);
             Services.DependencyRegister.ConfigureServices(services);
             //
+            services.AddSession();
+            //
             services.AddMvc();
         }
 
@@ -72,6 +74,9 @@ namespace GR.Web
             app.UseApplicationInsightsExceptionTelemetry();
 
             app.UseStaticFiles();
+
+            //重要: session的注册必须在UseMvc之前，因为MVC里面要用
+            app.UseSession();
 
             app.UseMvc(routes =>
             {
