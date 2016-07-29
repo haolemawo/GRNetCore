@@ -2229,6 +2229,9 @@
           "lib/netstandard1.3/NUglify.dll": {}
         }
       },
+      "OpenSans/1.0.1": {
+        "type": "package"
+      },
       "Remotion.Linq/2.1.1": {
         "type": "package",
         "dependencies": {
@@ -6219,6 +6222,56 @@
         "lib/net40/NUglify.xml",
         "lib/netstandard1.3/NUglify.dll",
         "lib/netstandard1.3/NUglify.xml"
+      ]
+    },
+    "OpenSans/1.0.1": {
+      "sha512": "8nzedQfZhfCVWD9SSFPlkkh9OKsdTnFWSzvX/jfuvJztBepNwYBkevprtN1BjgyfBZMRcSoi5PJHvE1tgCzOIw==",
+      "type": "package",
+      "path": "OpenSans/1.0.1",
+      "files": [
+        "OpenSans.1.0.1.nupkg.sha512",
+        "OpenSans.nuspec",
+        "README.md",
+        "content/fonts/OpenSans/Bold/OpenSans-Bold.eot",
+        "content/fonts/OpenSans/Bold/OpenSans-Bold.svg",
+        "content/fonts/OpenSans/Bold/OpenSans-Bold.ttf",
+        "content/fonts/OpenSans/Bold/OpenSans-Bold.woff",
+        "content/fonts/OpenSans/BoldItalic/OpenSans-BoldItalic.eot",
+        "content/fonts/OpenSans/BoldItalic/OpenSans-BoldItalic.svg",
+        "content/fonts/OpenSans/BoldItalic/OpenSans-BoldItalic.ttf",
+        "content/fonts/OpenSans/BoldItalic/OpenSans-BoldItalic.woff",
+        "content/fonts/OpenSans/ExtraBold/OpenSans-ExtraBold.eot",
+        "content/fonts/OpenSans/ExtraBold/OpenSans-ExtraBold.svg",
+        "content/fonts/OpenSans/ExtraBold/OpenSans-ExtraBold.ttf",
+        "content/fonts/OpenSans/ExtraBold/OpenSans-ExtraBold.woff",
+        "content/fonts/OpenSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot",
+        "content/fonts/OpenSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.svg",
+        "content/fonts/OpenSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.ttf",
+        "content/fonts/OpenSans/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff",
+        "content/fonts/OpenSans/Italic/OpenSans-Italic.eot",
+        "content/fonts/OpenSans/Italic/OpenSans-Italic.svg",
+        "content/fonts/OpenSans/Italic/OpenSans-Italic.ttf",
+        "content/fonts/OpenSans/Italic/OpenSans-Italic.woff",
+        "content/fonts/OpenSans/Light/OpenSans-Light.eot",
+        "content/fonts/OpenSans/Light/OpenSans-Light.svg",
+        "content/fonts/OpenSans/Light/OpenSans-Light.ttf",
+        "content/fonts/OpenSans/Light/OpenSans-Light.woff",
+        "content/fonts/OpenSans/LightItalic/OpenSans-LightItalic.eot",
+        "content/fonts/OpenSans/LightItalic/OpenSans-LightItalic.svg",
+        "content/fonts/OpenSans/LightItalic/OpenSans-LightItalic.ttf",
+        "content/fonts/OpenSans/LightItalic/OpenSans-LightItalic.woff",
+        "content/fonts/OpenSans/Regular/OpenSans-Regular.eot",
+        "content/fonts/OpenSans/Regular/OpenSans-Regular.svg",
+        "content/fonts/OpenSans/Regular/OpenSans-Regular.ttf",
+        "content/fonts/OpenSans/Regular/OpenSans-Regular.woff",
+        "content/fonts/OpenSans/Semibold/OpenSans-Semibold.eot",
+        "content/fonts/OpenSans/Semibold/OpenSans-Semibold.svg",
+        "content/fonts/OpenSans/Semibold/OpenSans-Semibold.ttf",
+        "content/fonts/OpenSans/Semibold/OpenSans-Semibold.woff",
+        "content/fonts/OpenSans/SemiboldItalic/OpenSans-SemiboldItalic.eot",
+        "content/fonts/OpenSans/SemiboldItalic/OpenSans-SemiboldItalic.svg",
+        "content/fonts/OpenSans/SemiboldItalic/OpenSans-SemiboldItalic.ttf",
+        "content/fonts/OpenSans/SemiboldItalic/OpenSans-SemiboldItalic.woff"
       ]
     },
     "Remotion.Linq/2.1.1": {
@@ -11046,7 +11099,8 @@
       "Microsoft.Extensions.Logging.Debug >= 1.0.0",
       "Microsoft.Extensions.Options.ConfigurationExtensions >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
-      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0"
+      "Microsoft.VisualStudio.Web.BrowserLink.Loader >= 14.0.0",
+      "OpenSans >= 1.0.1"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

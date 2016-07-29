@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "0da79695544f9a416f6c80726e632b2408432975"
+    "signature": "db8c1b4554e806d44ba7dff78f7418cde96a2ddd"
   },
   "compilationOptions": {
     "defines": [
@@ -42,7 +42,8 @@
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
           "Microsoft.AspNetCore.Authentication": "1.0.0",
           "Microsoft.AspNetCore.Http.Abstractions": "1.0.0",
-          "Microsoft.AspNetCore.Session": "1.0.0"
+          "Microsoft.AspNetCore.Session": "1.0.0",
+          "OpenSans": "1.0.1"
         },
         "runtime": {
           "GR.Web.dll": {}
@@ -1810,6 +1811,7 @@
           "lib/netstandard1.3/NUglify.dll": {}
         }
       },
+      "OpenSans/1.0.1": {},
       "Remotion.Linq/2.1.1": {
         "dependencies": {
           "System.Collections": "4.0.11",
@@ -4363,6 +4365,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-iYV/OtSs+HgyE/RilY7UvGXYec6r0OJenWlPIdX/IivedVpSSdzxvPvUIyWpiV/6ad7VjantH0/6oaOhAZbaoQ=="
+    },
+    "OpenSans/1.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8nzedQfZhfCVWD9SSFPlkkh9OKsdTnFWSzvX/jfuvJztBepNwYBkevprtN1BjgyfBZMRcSoi5PJHvE1tgCzOIw=="
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",
