@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.Claims;
+﻿using System; 
 using System.Threading.Tasks;
 using GR.Core;
 using GR.Core.Security;
 using GR.Services.Account;
 using GR.Services.Account.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,6 +12,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GR.Web.Controllers
 {
+    [Authorize]
     public class AccountController : BaseController
     {
         private readonly AccountService _accountService;
@@ -22,6 +22,7 @@ namespace GR.Web.Controllers
             _accountService = accountService;
         }
 
+        [AllowAnonymous]
         // GET: /<controller>/
         public IActionResult Login(string returnUrl = null)
         {
@@ -30,6 +31,7 @@ namespace GR.Web.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
@@ -37,10 +39,17 @@ namespace GR.Web.Controllers
             {
                 //123456-20A386F664CB306D8D61437BF15002E2
                 model.Password = MD5EncryptProvider.Encrypt(model.Password);
-                var user = _accountService.Login(model);
-                if (user != null)
+                var userPrincipal = _accountService.SignIn(model);
+                if (userPrincipal != null)
                 {
-                    await SignInAsync(user);
+                    //
+                    await HttpContext.Authentication.SignInAsync(Constants.CONSTANTS_LOGIN_COOKIE, userPrincipal,
+                        new AuthenticationProperties
+                        {
+                            ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
+                            IsPersistent = false,
+                            AllowRefresh = false
+                        });
                     //
                     if (returnUrl != null && returnUrl.Replace('/', ' ').Trim() != string.Empty)
                     {
@@ -52,35 +61,15 @@ namespace GR.Web.Controllers
             }
             return View(model);
         }
-        
+
         public async Task SignOut()
         {
-            await  HttpContext.Authentication.SignOutAsync(ConstConfig.CONFIG_LOGIN_COOKIE);
+            await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
         }
 
         public IActionResult Forbidden()
         {
             return View();
-        }
-
-
-        private async Task SignInAsync(UserModel model)
-        {
-            string issuer = "http://localhost:7493/";
-            var claims = new List<Claim>();
-            claims.Add(new Claim(ClaimTypes.Name, model.UserName, ClaimValueTypes.String, issuer));
-            claims.Add(new Claim(ClaimTypes.Role, "Administrator", ClaimValueTypes.String, issuer));
-            var userIdentity = new ClaimsIdentity("SuperSecureLogin_" + model.UserId);
-            userIdentity.AddClaims(claims);
-            var userPrincipal = new ClaimsPrincipal(userIdentity);
-            //
-            await HttpContext.Authentication.SignInAsync(ConstConfig.CONFIG_LOGIN_COOKIE, userPrincipal,
-                new AuthenticationProperties
-                {
-                    ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
-                    IsPersistent = false,
-                    AllowRefresh = false
-                });
         }
 
         private IActionResult RedirectToLocal(string returnUrl)

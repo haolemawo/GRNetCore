@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace GR.Web.Controllers
 {
-    //[Authorize]
-    [Authorize(Roles = "Administrator")]
+    [Authorize]
+    //[Authorize(Roles = "Administrator")]
     public class HomeController : BaseController
     {
         public IActionResult Index()

@@ -90,7 +90,7 @@ namespace GR.Web
             // 配置COOKIE
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationScheme =  ConstConfig.CONFIG_LOGIN_COOKIE,
+                AuthenticationScheme =  Constants.CONSTANTS_LOGIN_COOKIE,
                 LoginPath = new PathString("/Account/Login/"),
                 AccessDeniedPath = new PathString("/Account/Forbidden/"),
                 AutomaticAuthenticate = true,
