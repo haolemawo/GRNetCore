@@ -43,6 +43,7 @@
             <input type="email" id="username" name="username" class="form-control" placeholder="用户名" required autofocus />
             <label for="password" class="sr-only">密码</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="密码" required />
+            <input hidden id="returnUrl" name="returnUrl" value="@ViewBag.ReturnUrl" />
             @*<div class="checkbox">
                 <label>
                     <input type="checkbox" id="rememberme" name="rememberme" value="rememberme" />记住密码

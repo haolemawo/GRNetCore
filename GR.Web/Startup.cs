@@ -3,6 +3,7 @@ using System.Text;
 using GR.Services.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,7 +43,8 @@ namespace GR.Web
             Data.DependencyRegister.ConfigureServices(services);
             Core.DependencyRegister.ConfigureServices(services);
             Services.DependencyRegister.ConfigureServices(services);
-            //
+            // 
+            services.AddAuthorization();//添加权限验证
             services.AddSession();
             //
             services.AddMvc();
@@ -77,6 +79,15 @@ namespace GR.Web
 
             //重要: session的注册必须在UseMvc之前，因为MVC里面要用
             app.UseSession();
+            // 配置COOKIE
+            app.UseCookieAuthentication(new CookieAuthenticationOptions
+            {
+                AuthenticationScheme = "GRNetCore_Cookie",
+                LoginPath = new PathString("/Account/Login/"),
+                AccessDeniedPath = new PathString("/Account/Forbidden/"),
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true
+            });
 
             app.UseMvc(routes =>
             {
