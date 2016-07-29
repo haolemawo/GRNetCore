@@ -26,6 +26,9 @@ namespace GR.Web.Controllers
         // GET: /<controller>/
         public IActionResult Login(string returnUrl = null)
         {
+
+            ViewBag.IsInvalid = false;
+            ViewBag.ErrorMsg = "";
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -57,6 +60,8 @@ namespace GR.Web.Controllers
                     }
                     return RedirectToAction("Index", "Home");
                 }
+                ViewBag.IsInvalid = true;
+                ViewBag.ErrorMsg = "账号或密码错误";
                 return View(model);
             }
             return View(model);
