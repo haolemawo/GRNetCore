@@ -57,6 +57,7 @@
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
+E:\Code\GRNetCore\GR.Core\ConstConfig.cs
 E:\Code\GRNetCore\GR.Core\DependencyRegister.cs
 E:\Code\GRNetCore\GR.Core\Domain\BaseEntity.cs
 E:\Code\GRNetCore\GR.Core\Domain\Menus\Menu.cs

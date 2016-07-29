@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using GR.Core;
 using GR.Core.Security;
 using GR.Services.Account;
 using GR.Services.Account.Models;
@@ -43,7 +44,7 @@ namespace GR.Web.Controllers
                     //
                     if (returnUrl != null && returnUrl.Replace('/', ' ').Trim() != string.Empty)
                     {
-                        return Redirect(returnUrl);
+                        return RedirectToLocal(returnUrl);
                     }
                     return RedirectToAction("Index", "Home");
                 }
@@ -51,23 +52,47 @@ namespace GR.Web.Controllers
             }
             return View(model);
         }
+        
+        public async Task SignOut()
+        {
+            await  HttpContext.Authentication.SignOutAsync(ConstConfig.CONFIG_LOGIN_COOKIE);
+        }
+
+        public IActionResult Forbidden()
+        {
+            return View();
+        }
+
 
         private async Task SignInAsync(UserModel model)
         {
             string issuer = "http://localhost:7493/";
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.Name, model.UserName, ClaimValueTypes.String, issuer));
+            claims.Add(new Claim(ClaimTypes.Role, "Administrator", ClaimValueTypes.String, issuer));
             var userIdentity = new ClaimsIdentity("SuperSecureLogin_" + model.UserId);
             userIdentity.AddClaims(claims);
             var userPrincipal = new ClaimsPrincipal(userIdentity);
-
-            await HttpContext.Authentication.SignInAsync("GRNetCore_Cookie", userPrincipal,
+            //
+            await HttpContext.Authentication.SignInAsync(ConstConfig.CONFIG_LOGIN_COOKIE, userPrincipal,
                 new AuthenticationProperties
                 {
                     ExpiresUtc = DateTime.UtcNow.AddMinutes(20),
                     IsPersistent = false,
                     AllowRefresh = false
                 });
+        }
+
+        private IActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
         }
     }
 }

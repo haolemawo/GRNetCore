@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Text;
+using GR.Core;
 using GR.Services.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -47,7 +50,12 @@ namespace GR.Web
             services.AddAuthorization();//添加权限验证
             services.AddSession();
             //
-            services.AddMvc();
+            //services.AddMvc();
+            //添加授权
+            services.AddMvc(config => {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                config.Filters.Add(new AuthorizeFilter(policy));
+            });
         }
 
         // The secret key every token will be signed with.
@@ -82,7 +90,7 @@ namespace GR.Web
             // 配置COOKIE
             app.UseCookieAuthentication(new CookieAuthenticationOptions
             {
-                AuthenticationScheme = "GRNetCore_Cookie",
+                AuthenticationScheme =  ConstConfig.CONFIG_LOGIN_COOKIE,
                 LoginPath = new PathString("/Account/Login/"),
                 AccessDeniedPath = new PathString("/Account/Forbidden/"),
                 AutomaticAuthenticate = true,
