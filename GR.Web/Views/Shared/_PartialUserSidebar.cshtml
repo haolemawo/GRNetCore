@@ -1,5 +1,5 @@
 ﻿@using System.Security.Claims;
-@{ 
+@{
     var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value;
 }
 <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
@@ -14,7 +14,7 @@
         <a asp-area="" asp-controller="Account" asp-action="Profile">
             <i class="icon-user"></i> 个人信息
         </a>
-    </li> 
+    </li>
     <li>
         <a href="app_calendar.html">
             <i class="icon-calendar"></i> 日程表
@@ -34,7 +34,7 @@
     </li>
     <li class="divider"> </li>
     <li>
-        <a href="javascript:void();">
+        <a data-toggle="modal" href="#changepassword">
             <i class="fa fa-wrench"></i>修改密码
         </a>
     </li>

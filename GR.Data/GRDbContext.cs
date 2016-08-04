@@ -1,4 +1,5 @@
 ﻿using System;
+using GR.Core.Domain;
 using GR.Core.Domain.Menus;
 using GR.Core.Domain.Roles;
 using GR.Core.Domain.Users;
@@ -12,8 +13,17 @@ namespace GR.Data
     /// <summary>
     /// 数据库链接上下文
     /// </summary>
-    public class GRDbContext : DbContext
+    public class GRDbContext : DbContext, IDbContext
     {
+        //public GRDbContext(DbContextOptions options) : base(options)
+        //{
+        //}
+
+        //protected GRDbContext() : base()
+        //{
+
+        //}
+
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<Menu> Menus { get; set; }
@@ -45,5 +55,16 @@ namespace GR.Data
             UserRoleMap.Map(modelBuilder);
             MenuRoleMap.Map(modelBuilder);
         }
+
+        /// <summary>
+        /// Get DbSet
+        /// </summary>
+        /// <typeparam name="TEntity">Entity type</typeparam>
+        /// <returns>DbSet</returns>
+        public new DbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
+        {
+            return base.Set<TEntity>();
+        }
+         
     }
 }

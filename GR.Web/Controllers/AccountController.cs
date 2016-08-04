@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using GR.Core;
 using GR.Core.Security;
@@ -104,6 +106,18 @@ namespace GR.Web.Controllers
         public IActionResult ForgetPassword()
         {
             return View();
+        }
+
+        /// <summary> 修改密码
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        {
+            var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value; ;
+            var result = _accountService.ChangePassword(model, userName);
+            await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
+            return Ok(result);
         }
 
         /// <summary> 用户向信息

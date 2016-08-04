@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
 using GR.Core;
+using GR.Data;
 using GR.Services.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -42,6 +43,7 @@ namespace GR.Web
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             //services.AddDbContext<GRDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            //services.AddEntityFrameworkSqlServer().AddDbContext<GRDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")),ServiceLifetime.Singleton);
             //
             Data.DependencyRegister.ConfigureServices(services);
             Core.DependencyRegister.ConfigureServices(services);
