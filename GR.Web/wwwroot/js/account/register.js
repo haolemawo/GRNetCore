@@ -111,15 +111,15 @@
             }
         });
 
-        jQuery('#register-btn').click(function () {
-            jQuery('.login-form').hide();
-            jQuery('.register-form').show();
-        });
+        //jQuery('#register-btn').click(function () {
+        //    jQuery('.login-form').hide();
+        //    jQuery('.register-form').show();
+        //});
 
-        jQuery('#register-back-btn').click(function () {
-            jQuery('.login-form').show();
-            jQuery('.register-form').hide();
-        });
+        //jQuery('#register-back-btn').click(function () {
+        //    jQuery('.login-form').show();
+        //    jQuery('.register-form').hide();
+        //});
     }
 
     return {
@@ -127,7 +127,7 @@
         init: function () {
              
             handleRegister();
-
+            jQuery('.register-form').show();
         }
 
     };

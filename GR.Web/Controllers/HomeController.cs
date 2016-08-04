@@ -10,6 +10,7 @@ namespace GR.Web.Controllers
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "首页";
             return View();
         }
     }

@@ -1,0 +1,51 @@
+﻿@using System.Security.Claims;
+@{ 
+    var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value;
+}
+<a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+    <img alt="" class="img-circle" src="~/metronic/assets/layouts/layout/img/avatar3_small.jpg" />
+    <span class="username username-hide-on-mobile">
+        @userName
+    </span>
+    <i class="fa fa-angle-down"></i>
+</a>
+<ul class="dropdown-menu dropdown-menu-default">
+    <li>
+        <a asp-area="" asp-controller="Account" asp-action="Profile">
+            <i class="icon-user"></i> 个人信息
+        </a>
+    </li> 
+    <li>
+        <a href="app_calendar.html">
+            <i class="icon-calendar"></i> 日程表
+        </a>
+    </li>
+    <li>
+        <a href="app_inbox.html">
+            <i class="icon-envelope-open"></i> 私信
+            <span class="badge badge-danger"> 3 </span>
+        </a>
+    </li>
+    <li>
+        <a href="app_todo.html">
+            <i class="icon-rocket"></i> 任务
+            <span class="badge badge-success"> 7 </span>
+        </a>
+    </li>
+    <li class="divider"> </li>
+    <li>
+        <a href="javascript:void();">
+            <i class="fa fa-wrench"></i>修改密码
+        </a>
+    </li>
+    <li>
+        <a href="page_user_lock_1.html">
+            <i class="icon-lock"></i> 锁屏
+        </a>
+    </li>
+    <li>
+        <a asp-area="" asp-controller="Account" asp-action="SignOut">
+            <i class="icon-key"></i> 退出
+        </a>
+    </li>
+</ul>

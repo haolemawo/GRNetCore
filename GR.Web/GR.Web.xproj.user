@@ -3,6 +3,6 @@
   <PropertyGroup>
     <ActiveDebugProfile>IIS Express</ActiveDebugProfile>
     <ShowAllFiles>false</ShowAllFiles>
-    <NameOfLastUsedPublishProfile>GRNetCore</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>GrNetCore</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>

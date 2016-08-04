@@ -1,4 +1,4 @@
-﻿using System; 
+﻿using System;
 using System.Threading.Tasks;
 using GR.Core;
 using GR.Core.Security;
@@ -22,22 +22,31 @@ namespace GR.Web.Controllers
             _accountService = accountService;
         }
 
+        /// <summary> 登录
+        /// </summary>
+        /// <param name="returnUrl">跳转链接</param>
+        /// <returns></returns>
         [AllowAnonymous]
         // GET: /<controller>/
         public IActionResult Login(string returnUrl = null)
         {
-
+            ViewData["Title"] = "登录";
             ViewBag.IsInvalid = false;
             ViewBag.ErrorMsg = "";
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
 
+        /// <summary> 登录
+        /// </summary>
+        /// <param name="returnUrl">跳转链接</param>
+        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(LoginViewModel model, string returnUrl = null)
         {
+            ViewData["Title"] = "登录";
             if (ModelState.IsValid)
             {
                 //123456-20A386F664CB306D8D61437BF15002E2
@@ -67,9 +76,13 @@ namespace GR.Web.Controllers
             return View(model);
         }
 
-        public async Task SignOut()
+        /// <summary> 登出
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IActionResult> SignOut()
         {
             await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
+            return RedirectToAction("Login");
         }
 
         public IActionResult Forbidden()
@@ -77,16 +90,28 @@ namespace GR.Web.Controllers
             return View();
         }
 
-        private IActionResult RedirectToLocal(string returnUrl)
+        /// <summary> 注册
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Register()
         {
-            if (Url.IsLocalUrl(returnUrl))
-            {
-                return Redirect(returnUrl);
-            }
-            else
-            {
-                return RedirectToAction("Index", "Home");
-            }
+            return View();
+        }
+
+        /// <summary> 忘记密码
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult ForgetPassword()
+        {
+            return View();
+        }
+
+        /// <summary> 用户向信息
+        /// </summary>
+        /// <returns></returns>
+        public IActionResult Profile()
+        {
+            return View();
         }
     }
 }
