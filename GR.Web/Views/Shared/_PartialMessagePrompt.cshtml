@@ -1,0 +1,17 @@
+﻿@model GR.Services.ReturnResult
+
+@if (Model != null)
+{
+    if (Model.IsSuccess)
+    {
+        <div class="alert  alert-success">
+            <strong>成功：</strong> @Model.Message.
+        </div>
+    }
+    else
+    {
+        <div class="alert  alert-danger">
+            <strong>错误：</strong> @Model.Message.
+        </div>
+    }
+}

@@ -42,6 +42,19 @@
     "sourceMap": false
   },
   {
+    "outputFileName": "wwwroot/js/account/changepassword.min.js",
+    "inputFiles": [
+      "wwwroot/js/account/changepassword.js"
+    ],
+    // Optionally specify minification options
+    "minify": {
+      "enabled": true,
+      "renameLocals": true
+    },
+    // Optinally generate .map file
+    "sourceMap": false
+  },
+  {
     "outputFileName": "wwwroot/js/account/register.min.js",
     "inputFiles": [
       "wwwroot/js/account/register.js"

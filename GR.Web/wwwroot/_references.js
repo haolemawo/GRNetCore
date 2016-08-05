@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="js/account/changepassword.js" />
 /// <reference path="js/account/forgetpassword.js" />
 /// <reference path="js/account/login.js" />
 /// <reference path="js/account/register.js" />

@@ -18,7 +18,7 @@
                     required: "Email is required."
                 }
             },
-
+            
             invalidHandler: function (event, validator) { //display error alert on form submit   
 
             },

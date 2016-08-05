@@ -81,13 +81,20 @@ namespace GR.Services.Account
             {
                 result.IsSuccess = false;
                 result.Message = "用户不存在";
+                return result;
             }
             if (user.Password != model.OldPassword)
             {
                 result.IsSuccess = false;
                 result.Message = "原始密码输入错误";
+                return result;
             }
             user.Password = model.NewPassword;
+            if (_userRepository.Update(user) <= 0)
+            { 
+                result.IsSuccess = false;
+                result.Message = "密码修改失败，请重试";
+            }
             return result;
         }
     }

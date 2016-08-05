@@ -88,8 +88,8 @@ E:\Code\GRNetCore\GR.Data\Mapping\Menus\MenuRoleMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Roles\RoleMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Users\UserMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Users\UserRoleMap.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160722080551_CreateInit.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160722080551_CreateInit.Designer.cs
+E:\Code\GRNetCore\GR.Data\Migrations\20160805021202_CreateInit.cs
+E:\Code\GRNetCore\GR.Data\Migrations\20160805021202_CreateInit.Designer.cs
 E:\Code\GRNetCore\GR.Data\Migrations\GRDbContextModelSnapshot.cs
 E:\Code\GRNetCore\GR.Data\Properties\AssemblyInfo.cs
 E:\Code\GRNetCore\GR.Data\Repository\EfRepository.cs

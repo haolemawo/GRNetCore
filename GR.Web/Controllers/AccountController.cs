@@ -4,6 +4,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using GR.Core;
 using GR.Core.Security;
+using GR.Services;
 using GR.Services.Account;
 using GR.Services.Account.Models;
 using Microsoft.AspNetCore.Authorization;
@@ -97,6 +98,7 @@ namespace GR.Web.Controllers
         /// <returns></returns>
         public IActionResult Register()
         {
+            ViewData["Title"] = "注册";
             return View();
         }
 
@@ -105,15 +107,13 @@ namespace GR.Web.Controllers
         /// <returns></returns>
         public IActionResult ForgetPassword()
         {
+            ViewData["Title"] = "忘记密码";
             return View();
         }
 
-
-        /// <summary> 修改密码
-        /// </summary> 
-        /// <returns></returns>
         public IActionResult ChangePassword()
         {
+            ViewData["Title"] = "修改密码";
             return View();
         }
 
@@ -122,19 +122,49 @@ namespace GR.Web.Controllers
         /// <param name="model"></param>
         /// <returns></returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
-            var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value; ;
-            var result = _accountService.ChangePassword(model, userName);
-            await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
-            return Ok(result);
+            var result = new ReturnResult { IsSuccess = false, Message = "数据验证失败" };
+            ViewData["Title"] = "修改密码";
+            if (ModelState.IsValid)
+            {
+                model.OldPassword = MD5EncryptProvider.Encrypt(model.OldPassword);
+                model.NewPassword = MD5EncryptProvider.Encrypt(model.NewPassword);
+                model.ConfirmPassword = MD5EncryptProvider.Encrypt(model.ConfirmPassword);
+                var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value; ;
+                result = _accountService.ChangePassword(model, userName);
+                if (result.IsSuccess)
+                {
+                    await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
+                }
+            }
+            return View(result);
         }
+
+        ///// <summary> 修改密码
+        ///// </summary>
+        ///// <param name="model"></param>
+        ///// <returns></returns>
+        //[HttpPost]
+        //public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
+        //{
+        //    ViewData["Title"] = "修改密码";
+        //    model.OldPassword= MD5EncryptProvider.Encrypt(model.OldPassword);
+        //    model.NewPassword = MD5EncryptProvider.Encrypt(model.NewPassword);
+        //    model.ConfirmPassword = MD5EncryptProvider.Encrypt(model.ConfirmPassword);
+        //    var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value; ;
+        //    var result = _accountService.ChangePassword(model, userName);
+        //    await HttpContext.Authentication.SignOutAsync(Constants.CONSTANTS_LOGIN_COOKIE);
+        //    return Ok(result);
+        //}
 
         /// <summary> 用户向信息
         /// </summary>
         /// <returns></returns>
         public IActionResult Profile()
         {
+            ViewData["Title"] = "个人信息";
             return View();
         }
     }

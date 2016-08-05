@@ -120,8 +120,11 @@
 --reference:E:\Code\GRNetCore\GR.Core\bin\Debug\netstandard1.6\GR.Core.dll
 --reference:E:\Code\GRNetCore\GR.Data\bin\Debug\netstandard1.6\GR.Data.dll
 E:\Code\GRNetCore\GR.Services\DependencyRegister.cs
+E:\Code\GRNetCore\GR.Services\ReturnResult.cs
 E:\Code\GRNetCore\GR.Services\Account\AccountService.cs
+E:\Code\GRNetCore\GR.Services\Account\Models\ChangePasswordViewModel.cs
 E:\Code\GRNetCore\GR.Services\Account\Models\LoginViewModel.cs
+E:\Code\GRNetCore\GR.Services\Account\Models\RegisterViewModel.cs
 E:\Code\GRNetCore\GR.Services\Account\Models\UserModel.cs
 E:\Code\GRNetCore\GR.Services\Authentication\FormsAuthenticationService.cs
 E:\Code\GRNetCore\GR.Services\Authentication\IAuthenticationService.cs
