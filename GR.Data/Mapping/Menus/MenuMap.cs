@@ -15,8 +15,10 @@ namespace GR.Data.Mapping.Menus
             //列映射
             modelBuilder.Entity<Menu>().Property(t => t.Id).HasColumnName("Id");
             modelBuilder.Entity<Menu>().Property(t => t.ParentId).HasColumnName("ParentId");
-            modelBuilder.Entity<Menu>().Property(t => t.MenuName).IsRequired().HasColumnName("RoleName").HasColumnType("nvarchar(100)");
-            modelBuilder.Entity<Menu>().Property(t => t.Url).HasColumnName("Url").HasColumnType("nvarchar(1000)");
+            modelBuilder.Entity<Menu>().Property(t => t.MenuName).IsRequired().HasColumnName("MenuName").HasColumnType("nvarchar(100)");
+            modelBuilder.Entity<Menu>().Property(t => t.AreaName).HasColumnName("AreaName").HasColumnType("nvarchar(100)");
+            modelBuilder.Entity<Menu>().Property(t => t.ControllerName).HasColumnName("ControllerName").HasColumnType("nvarchar(100)");
+            modelBuilder.Entity<Menu>().Property(t => t.ActionName).HasColumnName("ActionName").HasColumnType("nvarchar(500)");
             modelBuilder.Entity<Menu>().Property(t => t.IsActived).HasColumnName("IsActived");
             //关系映射
             modelBuilder.Entity<Menu>()

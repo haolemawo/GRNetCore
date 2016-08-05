@@ -48,3 +48,5 @@ Temporary Items
 *.dll
 *.dll
 *.pdb
+*.dll
+*.pdb

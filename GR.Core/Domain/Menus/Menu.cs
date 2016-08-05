@@ -8,8 +8,12 @@ namespace GR.Core.Domain.Menus
         public int? ParentId { get; set; }
 
         public string MenuName { get; set; }
+        
+        public string AreaName { get; set; }
 
-        public string Url { get; set; }
+        public string ControllerName { get; set; }
+
+        public string ActionName { get; set; }
 
         public bool IsActived { get; set; }
 

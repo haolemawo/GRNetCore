@@ -1,4 +1,5 @@
-﻿using System; 
+﻿using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -14,10 +15,12 @@ namespace GR.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    ActionName = table.Column<string>(type: "nvarchar(500)", nullable: true),
+                    AreaName = table.Column<string>(type: "nvarchar(100)", nullable: true),
+                    ControllerName = table.Column<string>(type: "nvarchar(100)", nullable: true),
                     IsActived = table.Column<bool>(nullable: false),
-                    RoleName = table.Column<string>(type: "nvarchar(100)", nullable: false),
-                    ParentId = table.Column<int>(nullable: true),
-                    Url = table.Column<string>(type: "nvarchar(1000)", nullable: true)
+                    MenuName = table.Column<string>(type: "nvarchar(100)", nullable: false),
+                    ParentId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {

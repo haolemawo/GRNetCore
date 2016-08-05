@@ -1,7 +1,9 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata; 
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using GR.Data;
 
 namespace GR.Data.Migrations
 {
@@ -20,20 +22,28 @@ namespace GR.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnName("Id");
 
+                    b.Property<string>("ActionName")
+                        .HasColumnName("ActionName")
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<string>("AreaName")
+                        .HasColumnName("AreaName")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("ControllerName")
+                        .HasColumnName("ControllerName")
+                        .HasColumnType("nvarchar(100)");
+
                     b.Property<bool>("IsActived")
                         .HasColumnName("IsActived");
 
                     b.Property<string>("MenuName")
                         .IsRequired()
-                        .HasColumnName("RoleName")
+                        .HasColumnName("MenuName")
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("ParentId")
                         .HasColumnName("ParentId");
-
-                    b.Property<string>("Url")
-                        .HasColumnName("Url")
-                        .HasColumnType("nvarchar(1000)");
 
                     b.HasKey("Id")
                         .HasName("PK_MENU_ID");

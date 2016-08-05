@@ -108,10 +108,20 @@ namespace GR.Web.Controllers
             return View();
         }
 
+
+        /// <summary> 修改密码
+        /// </summary> 
+        /// <returns></returns>
+        public IActionResult ChangePassword()
+        {
+            return View();
+        }
+
         /// <summary> 修改密码
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
+        [HttpPost]
         public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
             var userName = User.Identities.First(u => u.IsAuthenticated && u.HasClaim(c => c.Type == ClaimTypes.Name)).FindFirst(ClaimTypes.Name).Value; ;
