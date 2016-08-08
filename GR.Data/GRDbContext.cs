@@ -13,7 +13,7 @@ namespace GR.Data
     /// <summary>
     /// 数据库链接上下文
     /// </summary>
-    public class GRDbContext : DbContext, IDbContext
+    public class GRDbContext : DbContext
     {
         //public GRDbContext(DbContextOptions options) : base(options)
         //{
@@ -55,16 +55,6 @@ namespace GR.Data
             UserRoleMap.Map(modelBuilder);
             MenuRoleMap.Map(modelBuilder);
         }
-
-        /// <summary>
-        /// Get DbSet
-        /// </summary>
-        /// <typeparam name="TEntity">Entity type</typeparam>
-        /// <returns>DbSet</returns>
-        public new DbSet<TEntity> Set<TEntity>() where TEntity : BaseEntity
-        {
-            return base.Set<TEntity>();
-        }
-         
+        
     }
 }

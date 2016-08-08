@@ -81,7 +81,6 @@
 -r:"E:\Code\GRNetCore\GR.Core\bin\Release\netstandard1.6\GR.Core.dll"
 "E:\Code\GRNetCore\GR.Data\DependencyRegister.cs"
 "E:\Code\GRNetCore\GR.Data\GRDbContext.cs"
-"E:\Code\GRNetCore\GR.Data\IDbContext.cs"
 "E:\Code\GRNetCore\GR.Data\Mapping\Menus\MenuMap.cs"
 "E:\Code\GRNetCore\GR.Data\Mapping\Menus\MenuRoleMap.cs"
 "E:\Code\GRNetCore\GR.Data\Mapping\Roles\RoleMap.cs"
@@ -92,5 +91,3 @@
 "E:\Code\GRNetCore\GR.Data\Migrations\GRDbContextModelSnapshot.cs"
 "E:\Code\GRNetCore\GR.Data\Properties\AssemblyInfo.cs"
 "E:\Code\GRNetCore\GR.Data\Repository\EfRepository.cs"
-"E:\Code\GRNetCore\GR.Data\Repository\MenuRepository.cs"
-"E:\Code\GRNetCore\GR.Data\Repository\UserRepository.cs"
