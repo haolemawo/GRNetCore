@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using GR.Core;
+using GR.Core.Data;
+using GR.Core.Domain.Users;
 using GR.Data.Repository;
 using GR.Services.Account.Models;
 
@@ -10,9 +13,9 @@ namespace GR.Services.Account
 {
     public class AccountService
     {
-        private readonly UserRepository _userRepository;
+        private readonly IRepository<User> _userRepository;
 
-        public AccountService(UserRepository userRepository)
+        public AccountService(IRepository<User> userRepository)
         {
             _userRepository = userRepository;
         }
@@ -24,8 +27,8 @@ namespace GR.Services.Account
         /// <returns></returns>
         public ReturnResult<UserModel> Login(LoginViewModel model)
         {
-            var result = new ReturnResult<UserModel>();
-            var user = _userRepository.Login(model.UserName, model.Password);
+            var result = new ReturnResult<UserModel>(); 
+            var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == model.UserName && x.Password == model.Password);
             //
             if (user == null)
             {
@@ -50,7 +53,7 @@ namespace GR.Services.Account
         /// <returns></returns>
         public ClaimsPrincipal SignIn(LoginViewModel model)
         {
-            var user = _userRepository.Login(model.UserName, model.Password);
+            var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == model.UserName && x.Password == model.Password);
             if (user == null)
                 return null;
             //
@@ -86,7 +89,7 @@ namespace GR.Services.Account
                 IsSuccess = true,
                 Message = "密码修改成功，请重新登录"
             };
-            var user = _userRepository.GetUserBy(userName);
+            var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == userName);
             if (user == null)
             {
                 result.IsSuccess = false;
@@ -118,7 +121,7 @@ namespace GR.Services.Account
                 result.Message = "用户不存在，请重新登陆";
                 return result;
             }
-            var user = _userRepository.GetUserBy(userName);
+            var user = _userRepository.GetAll().FirstOrDefault(x => x.UserName == userName);
             if (user == null)
             {
                 result.IsSuccess = false;

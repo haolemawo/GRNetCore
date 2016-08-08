@@ -13,7 +13,7 @@ namespace GR.Data.Repository
     /// 
     /// </summary>
     /// <typeparam name="TEntity"></typeparam>
-    public abstract class EfRepository<TEntity> : EfRepository<GRDbContext, TEntity, int> where TEntity : BaseEntity
+    public class EfRepository<TEntity> : EfRepositoryBase<GRDbContext, TEntity, int>, IRepository<TEntity> where TEntity : BaseEntity
     {
         public EfRepository(GRDbContext dbContext) : base(dbContext)
         { }
@@ -29,13 +29,13 @@ namespace GR.Data.Repository
     /// <typeparam name="TDbContext"></typeparam>
     /// <typeparam name="TEntity"></typeparam>
     /// <typeparam name="TPrimaryKey"></typeparam>
-    public class EfRepository<TDbContext, TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey>
+    public abstract class EfRepositoryBase<TDbContext, TEntity, TPrimaryKey>
         where TDbContext : DbContext
         where TEntity : BaseEntity
     {
         private readonly TDbContext _dbContext;
 
-        public EfRepository(TDbContext dbContext)
+        public EfRepositoryBase(TDbContext dbContext)
         {
             _dbContext = dbContext;
         }

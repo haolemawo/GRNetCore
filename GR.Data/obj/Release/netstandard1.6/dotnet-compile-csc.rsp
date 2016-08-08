@@ -92,4 +92,5 @@
 "E:\Code\GRNetCore\GR.Data\Migrations\GRDbContextModelSnapshot.cs"
 "E:\Code\GRNetCore\GR.Data\Properties\AssemblyInfo.cs"
 "E:\Code\GRNetCore\GR.Data\Repository\EfRepository.cs"
+"E:\Code\GRNetCore\GR.Data\Repository\MenuRepository.cs"
 "E:\Code\GRNetCore\GR.Data\Repository\UserRepository.cs"

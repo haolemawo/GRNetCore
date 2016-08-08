@@ -1,4 +1,5 @@
 ﻿using System;
+using GR.Core.Data;
 using GR.Data.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,7 +11,7 @@ namespace GR.Data
         public static void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<GRDbContext>(ServiceLifetime.Singleton);
-            services.AddScoped<UserRepository, UserRepository>();
+            services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
         }
     }
 }

@@ -125,6 +125,7 @@
 "E:\Code\GRNetCore\GR.Services\Account\Models\LoginViewModel.cs"
 "E:\Code\GRNetCore\GR.Services\Account\Models\RegisterViewModel.cs"
 "E:\Code\GRNetCore\GR.Services\Account\Models\UserModel.cs"
+"E:\Code\GRNetCore\GR.Services\Account\Models\UserProfileViewModel.cs"
 "E:\Code\GRNetCore\GR.Services\Authentication\FormsAuthenticationService.cs"
 "E:\Code\GRNetCore\GR.Services\Authentication\IAuthenticationService.cs"
 "E:\Code\GRNetCore\GR.Services\Authentication\TokenAuthenticationService.cs"
