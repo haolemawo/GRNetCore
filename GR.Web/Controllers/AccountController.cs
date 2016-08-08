@@ -166,6 +166,6 @@ namespace GR.Web.Controllers
         {
             ViewData["Title"] = "个人信息";
             return View();
-        }
+        } 
     }
 }

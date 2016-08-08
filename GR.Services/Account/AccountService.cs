@@ -22,16 +22,25 @@ namespace GR.Services.Account
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
-        public UserModel Login(LoginViewModel model)
+        public ReturnResult<UserModel> Login(LoginViewModel model)
         {
+            var result = new ReturnResult<UserModel>();
             var user = _userRepository.Login(model.UserName, model.Password);
+            //
             if (user == null)
-                return null;
-            return new UserModel
+            {
+                result.IsSuccess = false;
+                result.Message = "用户不存在，请重新登陆";
+                return result;
+            }
+            result.IsSuccess = true;
+            result.Message = "";
+            result.Data = new UserModel
             {
                 UserName = user.UserName,
                 UserId = user.Id
             };
+            return result;
         }
 
         /// <summary>
@@ -72,7 +81,8 @@ namespace GR.Services.Account
         /// <returns></returns>
         public ReturnResult ChangePassword(ChangePasswordViewModel model, string userName)
         {
-            var result = new ReturnResult {
+            var result = new ReturnResult
+            {
                 IsSuccess = true,
                 Message = "密码修改成功，请重新登录"
             };
@@ -91,10 +101,36 @@ namespace GR.Services.Account
             }
             user.Password = model.NewPassword;
             if (_userRepository.Update(user) <= 0)
-            { 
+            {
                 result.IsSuccess = false;
                 result.Message = "密码修改失败，请重试";
             }
+            return result;
+        }
+
+        public ReturnResult<UserProfileViewModel> GetUserProfile(string userName)
+        {
+            var result = new ReturnResult<UserProfileViewModel>();
+
+            if (string.IsNullOrEmpty(userName))
+            {
+                result.IsSuccess = false;
+                result.Message = "用户不存在，请重新登陆";
+                return result;
+            }
+            var user = _userRepository.GetUserBy(userName);
+            if (user == null)
+            {
+                result.IsSuccess = false;
+                result.Message = "用户不存在，请重新登陆";
+                return result;
+            }
+            result.IsSuccess = true;
+            result.Message = "";
+            result.Data = new UserProfileViewModel
+            {
+                UserName = user.UserName
+            };
             return result;
         }
     }
