@@ -3,8 +3,8 @@ using GR.Core.Domain.Roles;
 
 namespace GR.Core.Domain.Users
 {
-    public class UserRole
-    { 
+    public class UserRole : BaseEntity
+    {
         public int UserId { get; set; }
 
         public int RoleId { get; set; }

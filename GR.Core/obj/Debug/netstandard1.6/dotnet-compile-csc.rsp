@@ -57,6 +57,8 @@
 -r:"C:\Users\qiyin.gan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
 "E:\Code\GRNetCore\GR.Core\Constants.cs"
 "E:\Code\GRNetCore\GR.Core\DependencyRegister.cs"
+"E:\Code\GRNetCore\GR.Core\IPagedList.cs"
+"E:\Code\GRNetCore\GR.Core\PagedList.cs"
 "E:\Code\GRNetCore\GR.Core\Data\IRepository.cs"
 "E:\Code\GRNetCore\GR.Core\Domain\BaseEntity.cs"
 "E:\Code\GRNetCore\GR.Core\Domain\Menus\Menu.cs"

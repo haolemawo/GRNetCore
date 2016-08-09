@@ -1,4 +1,5 @@
 ﻿using System;
+using GR.Services.Menus;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,6 +10,13 @@ namespace GR.Web.Controllers
     [Authorize]
     public class MenuController : BaseController
     {
+        private readonly MenuService _menuService;
+
+        public MenuController(MenuService menuService)
+        {
+            _menuService = menuService;
+        }
+
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -17,6 +25,7 @@ namespace GR.Web.Controllers
         
         public IActionResult List()
         {
+            var list = _menuService.GetAllMenu();
             return View();
         }
 
