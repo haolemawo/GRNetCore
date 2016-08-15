@@ -1,5 +1,5 @@
---temp-output:E:\Code\GRNetCore\GR.Data\obj\Debug\netstandard1.6\
---out:E:\Code\GRNetCore\GR.Data\bin\Debug\netstandard1.6\GR.Data.dll
+--temp-output:E:\Code\GRNetCore\GR.Data\bin\GR.Data\obj\Debug\netstandard1.6\
+--out:E:\Code\GRNetCore\GR.Data\bin\GR.Data\bin\Debug\netstandard1.6\GR.Data.dll
 --define:DEBUG
 --define:TRACE
 --define:NETSTANDARD1_6
@@ -79,7 +79,7 @@
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\qiyin.gan\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---reference:E:\Code\GRNetCore\GR.Core\bin\Debug\netstandard1.6\GR.Core.dll
+--reference:E:\Code\GRNetCore\GR.Data\bin\GR.Core\bin\Debug\netstandard1.6\GR.Core.dll
 E:\Code\GRNetCore\GR.Data\DependencyRegister.cs
 E:\Code\GRNetCore\GR.Data\GRDbContext.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Menus\MenuMap.cs
@@ -87,10 +87,8 @@ E:\Code\GRNetCore\GR.Data\Mapping\Menus\MenuRoleMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Roles\RoleMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Users\UserMap.cs
 E:\Code\GRNetCore\GR.Data\Mapping\Users\UserRoleMap.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160805021202_CreateInit.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160805021202_CreateInit.Designer.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160815041450_Add_entityId_for_MenuRoleMapping_and_UserRoleMapping.cs
-E:\Code\GRNetCore\GR.Data\Migrations\20160815041450_Add_entityId_for_MenuRoleMapping_and_UserRoleMapping.Designer.cs
+E:\Code\GRNetCore\GR.Data\Migrations\20160815042303_CreateInit.cs
+E:\Code\GRNetCore\GR.Data\Migrations\20160815042303_CreateInit.Designer.cs
 E:\Code\GRNetCore\GR.Data\Migrations\GRDbContextModelSnapshot.cs
 E:\Code\GRNetCore\GR.Data\Properties\AssemblyInfo.cs
 E:\Code\GRNetCore\GR.Data\Repository\EfRepository.cs

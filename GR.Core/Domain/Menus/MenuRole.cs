@@ -3,7 +3,7 @@ using GR.Core.Domain.Roles;
 
 namespace GR.Core.Domain.Menus
 {
-    public class MenuRole
+    public class MenuRole : BaseEntity
     {
         public int MenuId { get; set; }
 

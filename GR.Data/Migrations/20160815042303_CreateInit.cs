@@ -66,12 +66,14 @@ namespace GR.Data.Migrations
                 name: "MenuRoleMapping",
                 columns: table => new
                 {
-                    RoleId = table.Column<int>(nullable: false),
-                    MenuId = table.Column<int>(nullable: false)
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    MenuId = table.Column<int>(nullable: false),
+                    RoleId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MENU_ROLE_MENUROLEID", x => new { x.RoleId, x.MenuId });
+                    table.PrimaryKey("PK_MENU_ROLE_MENUROLEID", x => x.Id);
                     table.ForeignKey(
                         name: "FK_MENU_ROLE_MENUID",
                         column: x => x.MenuId,
@@ -90,12 +92,14 @@ namespace GR.Data.Migrations
                 name: "UserRoleMapping",
                 columns: table => new
                 {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     RoleId = table.Column<int>(nullable: false),
                     UserId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_USER_ROLE_USERROLEID", x => new { x.RoleId, x.UserId });
+                    table.PrimaryKey("PK_USER_ROLE_USERROLEID", x => x.Id);
                     table.ForeignKey(
                         name: "FK_UserRoleMapping_Role_RoleId",
                         column: x => x.RoleId,

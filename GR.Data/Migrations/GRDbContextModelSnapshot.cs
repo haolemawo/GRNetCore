@@ -55,13 +55,17 @@ namespace GR.Data.Migrations
 
             modelBuilder.Entity("GR.Core.Domain.Menus.MenuRole", b =>
                 {
-                    b.Property<int>("RoleId")
-                        .HasColumnName("RoleId");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id");
 
                     b.Property<int>("MenuId")
                         .HasColumnName("MenuId");
 
-                    b.HasKey("RoleId", "MenuId")
+                    b.Property<int>("RoleId")
+                        .HasColumnName("RoleId");
+
+                    b.HasKey("Id")
                         .HasName("PK_MENU_ROLE_MENUROLEID");
 
                     b.HasIndex("MenuId");
@@ -118,13 +122,17 @@ namespace GR.Data.Migrations
 
             modelBuilder.Entity("GR.Core.Domain.Users.UserRole", b =>
                 {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id");
+
                     b.Property<int>("RoleId")
                         .HasColumnName("RoleId");
 
                     b.Property<int>("UserId")
                         .HasColumnName("UserId");
 
-                    b.HasKey("RoleId", "UserId")
+                    b.HasKey("Id")
                         .HasName("PK_USER_ROLE_USERROLEID");
 
                     b.HasIndex("RoleId");
