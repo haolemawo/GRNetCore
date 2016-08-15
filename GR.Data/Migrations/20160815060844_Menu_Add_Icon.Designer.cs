@@ -8,9 +8,10 @@ using GR.Data;
 namespace GR.Data.Migrations
 {
     [DbContext(typeof(GRDbContext))]
-    partial class GRDbContextModelSnapshot : ModelSnapshot
+    [Migration("20160815060844_Menu_Add_Icon")]
+    partial class Menu_Add_Icon
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.0-rtm-21431")

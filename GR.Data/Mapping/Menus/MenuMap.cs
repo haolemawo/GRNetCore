@@ -20,6 +20,7 @@ namespace GR.Data.Mapping.Menus
             modelBuilder.Entity<Menu>().Property(t => t.ControllerName).HasColumnName("ControllerName").HasColumnType("nvarchar(100)");
             modelBuilder.Entity<Menu>().Property(t => t.ActionName).HasColumnName("ActionName").HasColumnType("nvarchar(500)");
             modelBuilder.Entity<Menu>().Property(t => t.IsActived).HasColumnName("IsActived");
+            modelBuilder.Entity<Menu>().Property(t => t.Icon).HasColumnName("Icon").HasColumnType("nvarchar(500)");
             //关系映射
             modelBuilder.Entity<Menu>()
                 .HasOne(t => t.Parent)

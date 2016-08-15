@@ -25,7 +25,6 @@ namespace GR.Web.Controllers
         
         public IActionResult List()
         {
-            var list = _menuService.GetAllMenu();
             return View();
         }
 

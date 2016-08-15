@@ -17,6 +17,8 @@ namespace GR.Services.Menus.Models
 
         public string ActionName { get; set; }
 
+        public string Icon { get; set; }
+
         public List<MenuViewModel> Children { get; set; }
 
         /// <summary>

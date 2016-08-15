@@ -17,6 +17,8 @@ namespace GR.Core.Domain.Menus
 
         public bool IsActived { get; set; }
 
+        public string Icon { get; set; }
+
         public Menu Parent { get; set; }
 
         public List<Menu> Children { get; set; }
