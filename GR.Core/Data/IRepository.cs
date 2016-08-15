@@ -18,6 +18,9 @@ namespace GR.Core.Data
     /// <summary>
     /// This interface is implemented by all repositories to ensure implementation of fixed methods.
     /// </summary>
+    /// <remarks>
+    /// 参考ABP实现 https://github.com/aspnetboilerplate
+    /// </remarks>
     /// <typeparam name="TEntity">Main Entity type this repository works on</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key type of the entity</typeparam>
     public interface IRepository<TEntity, TPrimaryKey>  where TEntity : BaseEntity
