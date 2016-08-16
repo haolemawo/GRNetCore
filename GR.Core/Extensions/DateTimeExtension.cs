@@ -30,10 +30,11 @@ namespace GR.Core.Extensions
         /// <param name="endTime"></param>
         /// <param name="beginTime"></param>
         /// <returns></returns>
-        public static int GetTimeDiff(this DateTime endTime, DateTime beginTime)
+        public static double GetTimeDiff(this DateTime endTime, DateTime beginTime)
         {
-            var ticks = endTime.Subtract(beginTime).Ticks;
-            return (int)(ticks / 10000000);
+            //var ticks = endTime.Subtract(beginTime).Ticks;
+            //return (int)(ticks / 10000000);
+            return endTime.Subtract(beginTime).TotalSeconds;
         }
     }
 }
